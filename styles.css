@@ -1,0 +1,250 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-base: #afb6c2;
+  --text-title: #d4ccb6;
+  --background: #191816;
+  --form-background: #24221f;
+  --primary-color: #ffc632;
+}
+
+body {
+  display: grid;
+  grid-template-areas: "profile  timeline";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100vh;
+  background: var(--background);
+}
+
+main {
+  grid-area: profile;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--form-background);
+  padding: 70px;
+  height: 450px;
+  width: 550px;
+
+}
+
+#formulario {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-tex {
+  padding: 1px 0 15px 0;
+}
+
+.form-tex h2 {
+  color: var(--text-title);
+  font-family: Poppins;
+  font-Weight: 400, 500 e 600;
+  font-size: 24px;
+}
+
+.form-tex p {
+  color: var(--text-base);
+  font-family: Poppins;
+  font-size: 12px;
+  font-Weight: 400, 500 e 600
+}
+
+.label {
+  color: var(--text-base);
+  margin: 0;
+  padding: 0;
+  font-family: Poppins;
+  font-Weight: 300;
+  font-size: 15px;
+}
+
+#f1 {
+  width: 270px;
+  height: 35px;
+  margin: 0 0 10px 0;
+  padding-left: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--text-base);
+  outline: none;
+  /* Remove o contorno padrão ao focar */
+  transition: border-color 0.3s ease;
+  background: var(--form-background);
+}
+
+#f1 {
+  color: var(--text-title);
+  font-family: Poppins;
+
+  font-Weight: 400, 500 e 600
+}
+
+#f1:focus {
+  border: 2px solid var(--primary-color);
+}
+
+
+#c1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 270px;
+  font-size: 10px;
+  padding: 10px 0 10px 0;
+
+}
+
+#c1 input {
+  border-radius: 10px solid var(--text-title);
+  background: transparent;
+  width: 20px;
+  margin: 0;
+  padding: 0;
+  outline: none;
+
+}
+
+#c1 div {
+  padding: 0;
+  margin: 0;
+}
+
+#font {
+  color: var(--text-base);
+  font-family: Poppins;
+  font-Weight: 300;
+  font-size: 12px;
+}
+
+#c1 a {
+  font-family: Poppins;
+  font-Weight: 400;
+  font-size: 12px;
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.fam {
+  display: flex;
+  justify-content: center;
+  gap: 5PX;
+
+}
+
+
+
+#f2 {
+  width: 270px;
+  height: 50px;
+  margin: 0 0 10px 0;
+  padding: 0;
+  border-radius: 5px;
+  border: 0;
+  outline: none;
+  background: var(--primary-color);
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--background);
+}
+
+.tl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  color: var(--primary-color);
+
+}
+
+.tl a {
+  text-decoration: none;
+  color: #ffc632;
+
+}
+
+.tl a p {
+  font-family: Poppins;
+  font-weight: 300;
+
+}
+
+
+/* logo*/
+
+header{
+  position: fixed;
+  top: 0;
+  left: 2px;
+  
+  margin: 0;
+
+}
+
+nav {
+  grid-area: timeline;
+
+  background-image: url("./side-image\ \(1\).jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+
+}
+
+/*codigo feito pelo chat*/
+@media (max-width: 768px) {
+  body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+  }
+
+  /* Esconder o fundo lateral */
+  nav {
+      display: none;
+  }
+
+  /* Ajustar a logo */
+  header img {
+      max-width: 150px; /* Reduzir tamanho da logo */
+  }
+
+  /* Ajustar o formulário */
+  .form-group {
+      width: 90%; /* Ajustar para ocupar mais espaço */
+      max-width: 400px; /* Limite do tamanho */
+      padding: 40px; /* Reduzir padding */
+      height: auto; /* Altura automática */
+  }
+
+  /* Ajustar os inputs */
+  #f1 {
+      width: 100%; /* Inputs ocupam toda a largura */
+  }
+
+  #f2 {
+      width: 100%; /* Botão ocupa toda a largura */
+  }
+}
+
